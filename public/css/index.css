@@ -1,0 +1,76 @@
+#homepage-carousel-1{
+	position: relative; 
+	
+}
+
+#homepage-carousel-1::before{
+	content: "";
+	background-image: url('https://scontent.fsgn21-1.fna.fbcdn.net/v/t1.6435-9/81568490_2602918236471255_377257776818159616_n.jpg?stp=dst-jpg_p720x720&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFt0Jhj-1_5vZCKpicstKCnW0GzhzmM691bQbOHOYzr3YJdpS9AMPHtgZy_mfEd1_tr4kqZ-Vj3bNUCpSgkE72I&_nc_ohc=KCAS6aChXfoQ7kNvgERLeNU&_nc_zt=23&_nc_ht=scontent.fsgn21-1.fna&_nc_gid=AC1pxnpS54u1LkeLKS6ouQO&oh=00_AYABxLeV_xmUZVieagIe0FtQwtUMJN_IpxUS35CXcd6onw&oe=6774D071');
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.4;
+}
+
+#homepage-carousel-2{
+	position: relative; 
+	
+}
+
+#homepage-carousel-2::before{
+	content: "";
+	background-image: url('https://fptsoftware.com/-/media/project/fpt-software/global/common/fptsoftware_building_d.png?modified=20230518152255');
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.4;
+}
+
+#homepage-carousel-3{
+	position: relative; 
+	
+}
+
+#homepage-carousel-3::before{
+	content: "";
+	background-image: url('https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_covers/bonP3FngukrZfVXvdg1N.jpg');
+	background-size: cover;
+	position: absolute;
+	background-position: center;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.4;
+}
+
+#short-about .btn-get-started {
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 12px 32px;
+	border-radius: 50px;
+	transition: 0.5s;
+	line-height: 1;
+	margin: 10px;
+	color: rgb(230, 91, 40);
+	-webkit-animation-delay: 0.8s;
+	animation-delay: 0.8s;
+	border: 2px solid rgb(230, 91, 40);
+
+  }
+
+  #short-about .btn-get-started:hover {
+	background: rgb(230, 91, 40);
+	color: #fff;
+	text-decoration: none;
+  }
