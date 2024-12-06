@@ -26,9 +26,9 @@ include_once('views/main/navbar.php');
                   <p>' . $company->address . '</p>
                 </div>
 
-                <div class="username"> 
+                <div class="email"> 
                   <i class="bi bi-envelope"></i>
-                  <h4>Username:</h4>
+                  <h4>Email:</h4>
                   <p>Recruitment@fpt.com</p>
                 </div>
 

@@ -30,7 +30,7 @@
 		</nav>
 		<!-- /.navbar-->
 		<!-- Main Sidebar Container-->
-		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<aside class="main-sidebar elevation-4">
 			<!-- Brand Logo-->
 			<!-- <a class="brand-link" href="index.php?page=admin&controller=layouts&action=index" style="margin-left:20px;">
 				<h3>KMS<span style="color: #00BFFF;"> TECHNOLOGY</span>

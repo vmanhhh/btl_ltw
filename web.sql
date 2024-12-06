@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2024 at 04:02 AM
+-- Generation Time: Dec 06, 2024 at 07:49 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT '0',
   `createAt` datetime DEFAULT NULL,
@@ -40,9 +39,10 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`username`, `email`, `password`, `role`, `createAt`, `updateAt`) VALUES
-('admin', 'admin@gmail.com', '$2y$10$SSBBJb3eln4ooI.dJswSMOz7i6MtWPWi7Vgs40HH65PBe1jO0ZK.O', '1', '2024-12-01 15:18:07', '2024-12-01 15:18:08'),
-('manh', 'manh@gmail.com', '$2y$10$uSAjd62t8LjypQGkqzjZ0eZGLBqWkvgFUN4VMn5ypFbOBePxqKGBm', '0', '2024-12-01 16:20:07', '2024-12-06 16:18:07');
+INSERT INTO `admin` (`username`, `password`, `role`, `createAt`, `updateAt`) VALUES
+('admin', '$2y$10$SSBBJb3eln4ooI.dJswSMOz7i6MtWPWi7Vgs40HH65PBe1jO0ZK.O', '1', '2024-12-01 15:18:07', '2024-12-01 15:18:08'),
+('manh', '$2y$10$uSAjd62t8LjypQGkqzjZ0eZGLBqWkvgFUN4VMn5ypFbOBePxqKGBm', '0', '2024-12-01 16:20:07', '2024-12-06 16:18:07'),
+('thaiquang', '$2y$10$URJRrn5oIzsPwqdMcOWVyOKgiTSlRMe/TrmB6.C2Nf29N87kRV4Um', '0', '2024-12-06 10:43:30', '2024-12-06 10:43:30');
 
 -- --------------------------------------------------------
 
@@ -65,32 +65,8 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `date`, `approved`, `content`, `news_id`, `user_id`, `parent`) VALUES
-(55, '2024-12-06 16:25:26', 0, 'rất hay', 5, 'hcmuter@gmail.com', NULL),
-(58, '2024-12-06 16:36:46', 1, 'hay quá !!!', 4, 'abc@gmail.com', NULL),
-(59, '2024-12-06 16:38:19', 1, 'chúc mừng Fsoft', 4, 'abc@gmail.com', NULL),
-(63, '2024-12-06 17:01:41', 1, 'ai muốn join team thì ib mình nhé sđt: 012345678', 5, 'hcmuter@gmail.com', NULL),
-(66, '2024-12-06 17:03:49', 1, 'ai còn slot liên hệ mình nhé...', 5, 'abc@gmail.com', NULL),
-(67, '2024-12-06 17:05:17', 1, 'mình nè bạn ơi!', 5, 'abc@gmail.com', 63),
-(68, '2024-12-06 17:05:53', 1, '. hóng', 5, 'abc@gmail.com', 66),
-(69, '2024-12-06 17:06:27', 1, '. len top', 5, 'abc@gmail.com', 66),
-(70, '2024-12-06 17:06:50', 1, 'và gojek nữa :))', 4, 'abc@gmail.com', 59),
-(71, '2024-12-06 17:08:31', 1, 'ib mình nhé :3', 5, 'khoa.le@hcmut.edu.vn', 63),
-(72, '2024-12-06 18:57:09', 1, 'ok', 5, 'khoa.le@hcmut.edu.vn', 55),
-(79, '2024-12-06 19:11:01', 1, 'quá lý tưởng', 1, 'khoa.le@hcmut.edu.vn', NULL),
-(80, '2024-12-06 19:11:26', 1, 'đúng vậy', 1, 'khoa.le@hcmut.edu.vn', 79),
-(81, '2024-12-06 19:12:08', 1, 'đúng vậy', 1, 'khoa.le@hcmut.edu.vn', 79),
-(82, '2024-12-06 19:13:33', 1, 'tuyệt vời', 5, 'khoa.le@hcmut.edu.vn', NULL),
-(83, '2024-12-06 19:14:51', 1, 'quá tự hào', 3, 'khoa.le@hcmut.edu.vn', NULL),
-(84, '2024-12-06 19:16:01', 1, 'FPT số 1', 3, 'khoa.le@hcmut.edu.vn', NULL),
-(85, '2024-12-06 19:24:13', 1, 'quá ngạo nghễ', 3, 'khoa.le@hcmut.edu.vn', NULL),
-(86, '2024-12-06 19:34:17', 1, 'đúng vậy', 3, 'abc@gmail.com', 85),
-(87, '2024-12-06 19:37:00', 1, 'quá đúng!', 3, 'abc@gmail.com', 84),
-(88, '2024-12-06 19:39:04', 1, 'tuyệt vời', 4, 'abc@gmail.com', NULL),
-(95, '2024-12-06 20:41:05', 1, 'tuyệt vời', 2, 'khoa.le@hcmut.edu.vn', NULL),
-(96, '2024-12-06 20:42:52', 1, 'thích quá', 5, 'khoa.le@hcmut.edu.vn', NULL),
-(98, '2024-12-07 10:37:29', 1, 'ok', 2, 'khoa.le@hcmut.edu.vn', 95),
-(99, '2024-12-07 10:37:34', 1, 'hay quá', 3, 'khoa.le@hcmut.edu.vn', NULL),
-(100, '2024-12-02 08:14:53', 1, 'FPT', 5, 'khoa.le@hcmut.edu.vn', 66);
+(106, '2024-12-06 11:31:44', 1, 'Thích quá', 5, 'khoa.le@hcmut.edu.vn', NULL),
+(107, '2024-12-06 11:32:02', 1, 'Ước gì được tham gia', 5, 'khoa.le@hcmut.edu.vn', 106);
 
 -- --------------------------------------------------------
 
@@ -197,7 +173,7 @@ INSERT INTO `product` (`id`, `price`, `name`, `description`, `content`, `img`) V
 --
 
 CREATE TABLE `user` (
-  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `profile_photo` varchar(255) DEFAULT NULL,
   `fname` varchar(255) DEFAULT NULL,
   `lname` varchar(255) DEFAULT NULL,
@@ -213,7 +189,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `birthday`, `phone`, `createAt`, `updateAt`, `password`) VALUES
+INSERT INTO `user` (`username`, `profile_photo`, `fname`, `lname`, `gender`, `birthday`, `phone`, `createAt`, `updateAt`, `password`) VALUES
 ('abc@gmail.com', 'public/img/user/image.png', 'Tạ Quang', 'Thái', 1, 2004, '1231313132', '2024-11-05 12:32:27', '2024-11-06 16:07:23', '$2y$10$gNFVJqwP7i5XSQ3pH/kpU.0vdcoTwsLJSfuhHzSr4sT2Pqvtls56a'),
 ('hcmuter@gmail.com', 'public/img/user/image.png', 'Lê Thị Thu', 'Thủy', 0, 2004, '3213213', '2024-11-01 10:52:40', '2024-11-06 16:23:39', '$2y$10$gNFVJqwP7i5XSQ3pH/kpU.0vdcoTwsLJSfuhHzSr4sT2Pqvtls56a'),
 ('khoa.le@hcmut.edu.vn', 'public/img/user/2024_12_03_07_05_02pm.png', 'Lê Anh', 'Khoa', 1, 2004, '1123456789', '2024-11-28 20:31:38', '2024-12-04 01:05:02', '$2y$10$gNFVJqwP7i5XSQ3pH/kpU.0vdcoTwsLJSfuhHzSr4sT2Pqvtls56a'),
@@ -227,7 +203,7 @@ INSERT INTO `user` (`email`, `profile_photo`, `fname`, `lname`, `gender`, `birth
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`username`,`email`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `comment`
@@ -254,7 +230,8 @@ ALTER TABLE `creates`
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `admin_id` (`admin_id`);
 
 --
 -- Indexes for table `product`
@@ -266,7 +243,7 @@ ALTER TABLE `product`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -276,7 +253,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -305,8 +282,15 @@ ALTER TABLE `product`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`parent`) REFERENCES `comment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`parent`) REFERENCES `comment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comment_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `news`
+--
+ALTER TABLE `news`
+  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`username`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

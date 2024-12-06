@@ -1209,10 +1209,10 @@ section {
   font-size: 14px;
   color: #555974;
 }
-.contact .info .username, .contact .info .phone {
+.contact .info .email, .contact .info .phone {
   margin-top: 40px;
 }
-.contact .info .username:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
   background: #ef6603;
   color: #fff;
 }
