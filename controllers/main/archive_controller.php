@@ -12,4 +12,4 @@ class ArchiveController extends BaseController
 	{
 		$this->render('index');
 	}
-}
+} 

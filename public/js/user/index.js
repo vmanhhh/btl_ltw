@@ -9,15 +9,15 @@ $(function () {
 });
 
 $(".btn-edit").click(function (e) {
-	var email = $(this).data("email");
+	var username = $(this).data("username");
 	var fname = $(this).data("fname");
 	var lname = $(this).data("lname");
 	var gender = $(this).data("gender");
 	var age = $(this).data("age");
 	var phone = $(this).data("phone");
 	var img = $(this).data("img");
-	// console.log(email, fname, lname, gender, age, phone);
-	$("#EditUserModal input[name='email']").val(email);
+	// console.log(username, fname, lname, gender, age, phone);
+	$("#EditUserModal input[name='username']").val(username);
 	$("#EditUserModal input[name='fname']").val(fname);
 	$("#EditUserModal input[name='lname']").val(lname);
 	if (gender)
@@ -33,15 +33,15 @@ $(".btn-edit").click(function (e) {
 });
 
 $(".btn-changepass").click(function (e) {
-	var email = $(this).data("email");
-	$("#EditPassModal input[name='email']").val(email);
+	var username = $(this).data("username");
+	$("#EditPassModal input[name='username']").val(username);
 	$("#EditPassModal").modal("show");
 });
 
 $(".btn-delete").click(function (e) {
-	var email = $(this).data("email");
+	var username = $(this).data("username");
 	var img = $(this).data("img");
-	$("#DeleteUserModal input[name='email']").val(email);
+	$("#DeleteUserModal input[name='username']").val(username);
 	$("#DeleteUserModal input[name='img']").val(img);
 	$("#DeleteUserModal").modal("show");
 });

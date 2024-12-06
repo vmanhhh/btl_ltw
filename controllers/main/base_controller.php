@@ -21,5 +21,5 @@ class BaseController
       // Nếu file muốn gọi ra không tồn tại thì chuyển hướng đến trang báo lỗi.
       header('Location: index.php?page=main&controller=layouts&action=error');
     }
-  }
+  }  
 }

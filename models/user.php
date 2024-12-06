@@ -4,7 +4,7 @@ require_once('connection.php');
 
 class User
 {
-    public $email;
+    public $username;
     public $profile_photo;
     public $fname;
     public $lname;
@@ -13,11 +13,11 @@ class User
     public $phone;
     public $createAt;
     public $updateAt;
-    public $password;
+    public $password; 
 
-    public function __construct($email, $profile_photo, $fname, $lname, $gender, $birthday, $phone, $createAt, $updateAt, $password)
+    public function __construct($username, $profile_photo, $fname, $lname, $gender, $birthday, $phone, $createAt, $updateAt, $password)
     {
-        $this->email = $email;
+        $this->username = $username;
         $this->profile_photo = $profile_photo;
         $this->fname = $fname;
         $this->lname = $lname;
@@ -39,7 +39,7 @@ class User
         $users = [];
         foreach($req->fetch_all(MYSQLI_ASSOC) as $user) {
             $users[] = new User(
-                $user['email'],
+                $user['username'],
                 $user['profile_photo'],
                 $user['fname'],
                 $user['lname'],
@@ -54,14 +54,14 @@ class User
         return $users;
     }
 
-    static function get($email)
+    static function get($username)
     {
         $db = DB::getInstance();
         $req = $db->query(
             "
-            SELECT email, profile_photo, fname, lname, gender, birthday, phone, createAt, updateAt 
+            SELECT username, profile_photo, fname, lname, gender, birthday, phone, createAt, updateAt 
             FROM user
-            WHERE email = '$email'
+            WHERE username = '$username'
             ;"
         );
     
@@ -72,7 +72,7 @@ class User
     
         $result = $req->fetch_assoc();
         $user = new User(
-            $result['email'],
+            $result['username'],
             $result['profile_photo'],
             $result['fname'],
             $result['lname'],
@@ -88,54 +88,54 @@ class User
     }
     
 
-    static function insert($email, $profile_photo, $fname, $lname, $gender, $birthday, $phone, $password)
+    static function insert($username, $profile_photo, $fname, $lname, $gender, $birthday, $phone, $password)
     {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $db = DB::getInstance();
         $req = $db->query(
             "
-            INSERT INTO user (email, profile_photo, fname, lname, gender, birthday, phone, createAt, updateAt, password)
-            VALUES ('$email', '$profile_photo', '$fname', '$lname', $gender, $birthday, '$phone', NOW(), NOW(), '$password_hash')
+            INSERT INTO user (username, profile_photo, fname, lname, gender, birthday, phone, createAt, updateAt, password)
+            VALUES ('$username', '$profile_photo', '$fname', '$lname', $gender, $birthday, '$phone', NOW(), NOW(), '$password_hash')
             ;");
         return $req;
     }
 
-    static function delete($email)
+    static function delete($username)
     {
         $db = DB::getInstance();
-        $req = $db->query("DELETE FROM user WHERE email = '$email';");
+        $req = $db->query("DELETE FROM user WHERE username = '$username';");
         return $req;
     }
 
-    static function update($email, $profile_photo, $fname, $lname, $gender, $birthday, $phone)
+    static function update($username, $profile_photo, $fname, $lname, $gender, $birthday, $phone)
     {
         $db = DB::getInstance();
         $req = $db->query(
             "
             UPDATE user
             SET profile_photo = '$profile_photo', fname = '$fname', lname = '$lname', gender = $gender, birthday = $birthday, phone = '$phone', updateAt = NOW()
-            WHERE email = '$email'
+            WHERE username = '$username'
             ;"
         );
         return $req;
     }
 
-    static function validation($email, $password)
+    static function validation($username, $password)
     {
         $db = DB::getInstance();
-        $req = $db->query("SELECT * FROM user WHERE email = '$email'");
+        $req = $db->query("SELECT * FROM user WHERE username = '$username'");
         if (@password_verify($password, $req->fetch_assoc()['password']))
             return true;
         else
             return false;
     }
 
-    static function validateRegister($email)
+    static function validateRegister($username)
     {
         $db = DB::getInstance();
 
-        $stmt = $db->prepare("SELECT * FROM user WHERE email = ?");
-        $stmt->bind_param("s", $email);
+        $stmt = $db->prepare("SELECT * FROM user WHERE username = ?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
 
         $result = $stmt->get_result();
@@ -149,29 +149,29 @@ class User
         return true;
     }
 
-    static function changePassword($email, $oldpassword, $newpassword)
+    static function changePassword($username, $oldpassword, $newpassword)
     {
-        if (User::validation($email, $oldpassword)) {
+        if (User::validation($username, $oldpassword)) {
             $password_hash = password_hash($newpassword, PASSWORD_DEFAULT);
             $db = DB::getInstance();
             $req = $db->query(
                 "UPDATE user
                 SET password = '$password_hash', updateAt = NOW()
-                WHERE email = '$email';");
+                WHERE username = '$username';");
             return $req;
         } else {
             return false;
         }
     }
 
-    static function changePassword_($email, $newpassword)
+    static function changePassword_($username, $newpassword)
     {
         $password_hash = password_hash($newpassword, PASSWORD_DEFAULT);
         $db = DB::getInstance();
         $req = $db->query(
             "UPDATE user
             SET password = '$password_hash', updateAt = NOW()
-            WHERE email = '$email';");
+            WHERE username = '$username';");
         return $req;
     }
 }

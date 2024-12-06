@@ -87,7 +87,7 @@ class Admin
         $admins = [];
         foreach ($req->fetch_all(MYSQLI_ASSOC) as $admin) {
             $admins[] = new Admin(
-                $admin['username'],
+                $admin['username'], 
                 $admin['password'],
                 $admin['createAt'],
                 $admin['updateAt'],

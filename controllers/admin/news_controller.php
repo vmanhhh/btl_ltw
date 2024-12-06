@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('controllers/admin/base_controller.php');
 require_once('models/news.php');
 
@@ -20,7 +21,8 @@ class NewsController extends BaseController
         $description = $_POST['description'];
         $content = $_POST['content'];
         $title = $_POST['title'];
-        News::insert($title, $description, $content);
+        $admin_id = $_SESSION['user'];
+        News::insert($title, $description, $content, $admin_id);
         header('Location: index.php?page=admin&controller=news&action=index');
     }
     public function edit(){

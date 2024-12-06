@@ -15,4 +15,4 @@ class ServicesController extends BaseController
 		$data = array('products' => $products);
 		$this->render('index', $data);
 	}
-}
+} 

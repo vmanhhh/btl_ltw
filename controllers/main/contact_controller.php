@@ -16,3 +16,4 @@ class ContactController extends BaseController
 		$this->render('index', $data);
 	}
 }
+ 

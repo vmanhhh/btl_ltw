@@ -61,7 +61,7 @@ if (isset($_SESSION['guest'])) {
         </div>
         <form action="index.php?page=main&controller=register&action=editInfo" enctype="multipart/form-data" method="post">
           <div class="modal-body">
-            <input type="hidden" name="email">
+            <input type="hidden" name="username">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">

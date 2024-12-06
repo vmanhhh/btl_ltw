@@ -166,7 +166,7 @@
         multiple: ["", "multiple"],
         readonly: ["", "readonly"],
         required: ["", "required"],
-        type: ["hidden", "text", "search", "tel", "url", "email", "password", "datetime", "date", "month",
+        type: ["hidden", "text", "search", "tel", "url", "username", "password", "datetime", "date", "month",
                "week", "time", "datetime-local", "number", "range", "color", "checkbox", "radio",
                "file", "submit", "image", "reset", "button"]
       }

@@ -13,3 +13,4 @@ class LayoutsController extends BaseController
 		$this->render('index');
 	}
 }
+ 

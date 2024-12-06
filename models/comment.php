@@ -39,7 +39,7 @@ class Comment
         U.fname AS fname,
         U.lname AS lname,
         C.parent AS parent
-        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.email ORDER BY C.date");
+        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.username ORDER BY C.date");
         $comments = [];
         foreach ($req->fetch_all(MYSQLI_ASSOC) as $comment) {
             $comments[] = new Comment(
@@ -71,7 +71,7 @@ class Comment
         U.fname AS fname,
         U.lname AS lname,
         C.parent AS parent
-        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.email AND C.id = $id ORDER BY C.date");
+        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.username AND C.id = $id ORDER BY C.date");
         $result = $req->fetch_assoc();
         $comment = new Comment(
             $result['id'],
@@ -101,7 +101,7 @@ class Comment
         U.fname AS fname,
         U.lname AS lname,
         C.parent AS parent
-        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.email AND C.news_id = $news_id AND C.approved = 1 AND C.parent IS NULL ORDER BY C.date DESC;");
+        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.username AND C.news_id = $news_id AND C.approved = 1 AND C.parent IS NULL ORDER BY C.date DESC;");
         $comments = [];
         foreach ($req->fetch_all(MYSQLI_ASSOC) as $comment) {
             $comments[] = new Comment(
@@ -133,7 +133,7 @@ class Comment
         U.fname AS fname,
         U.lname AS lname,
         C.parent AS parent
-        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.email AND C.user_id = $user_id AND C.approved = 1 ORDER BY C.date DESC;");
+        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.username AND C.user_id = $user_id AND C.approved = 1 ORDER BY C.date DESC;");
         $comments = [];
         foreach ($req->fetch_all(MYSQLI_ASSOC) as $comment) {
             $comment[] = new Comment(
@@ -156,7 +156,7 @@ class Comment
     {
         $approved = true;
         $db = DB::getInstance();
-        $req = $db->query(
+        $req = $db->query( 
             "
             INSERT INTO comment (date, approved, content, news_id, user_id)
             VALUES (NOW(), $approved, '$content', $news_id, '$user_id')
@@ -192,7 +192,7 @@ class Comment
         U.fname AS fname,
         U.lname AS lname,
         C.parent AS parent
-        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.email AND C.parent = $id AND approved = 1;");
+        FROM comment AS C, user AS U, news AS N WHERE C.news_id = N.id AND C.user_id = U.username AND C.parent = $id AND approved = 1;");
         $replies = [];
         foreach ($req->fetch_all(MYSQLI_ASSOC) as $reply) {
             $replies[] = new Comment(

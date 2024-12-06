@@ -54,7 +54,7 @@ class BlogController extends BaseController
 		echo 'success';
 		exit();
 	}
-
+ 
 	public function comment()
 	{
 		$content = $_POST['content'];

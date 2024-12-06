@@ -19,7 +19,7 @@ class AdminController extends BaseController
 	{
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$add_new = Admin::insert($username, $password);
+		Admin::insert($username, $password);
 		header('Location: index.php?page=admin&controller=admin&action=index');
 	}
 

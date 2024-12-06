@@ -104,8 +104,8 @@ require_once('views/admin/content_layouts.php'); ?>
 												</div>
 
 												<div class="form-group">
-													<label>Email</label>
-													<input class="form-control" type="text" placeholder="Email" name="email" />
+													<label>Username</label>
+													<input class="form-control" type="text" placeholder="Username" name="username" />
 												</div>
 
 												<div class="form-group">
@@ -136,7 +136,7 @@ require_once('views/admin/content_layouts.php'); ?>
 										<th>Gender</th>
 										<th>Birth Year</th>
 										<th>Phone number</th>
-										<th>Email</th>
+										<th>Username</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -151,11 +151,11 @@ require_once('views/admin/content_layouts.php'); ?>
 										echo "<td>" . (($user->gender == 1) ? "Male" : "Female") . "</td>";
 										echo "<td>" . $user->birthday . "</td>";
 										echo "<td>" . $user->phone . "</td>";
-										echo "<td>" . $user->email . "</td>";
+										echo "<td>" . $user->username . "</td>";
 										echo "<td>
-											<btn data-toggle='tooltip' data-placement='top' title='Edit' class='btn-edit btn btn-primary btn-xs' style='margin-right: 5px' data-email='$user->email' data-fname='$user->fname' data-lname='$user->lname' data-gender='$user->gender' data-birthday='$user->birthday' data-phone='$user->phone' data-img='$user->profile_photo'> <i class='fas fa-edit'></i></btn>
-											<btn data-toggle='tooltip' data-placement='top' title='Change password' class='btn-changepass btn btn-warning btn-xs' style='margin-right: 5px' data-email='$user->email'> <i class='fas fa-lock'></i></btn>
-											<btn data-toggle='tooltip' data-placement='top' title='Delete user' class='btn-delete btn btn-danger btn-xs' style='margin-right: 5px' data-email='$user->email' data-img='$user->profile_photo'> <i class='fas fa-trash'></i></btn>
+											<btn data-toggle='tooltip' data-placement='top' title='Edit' class='btn-edit btn btn-primary btn-xs' style='margin-right: 5px' data-username='$user->username' data-fname='$user->fname' data-lname='$user->lname' data-gender='$user->gender' data-birthday='$user->birthday' data-phone='$user->phone' data-img='$user->profile_photo'> <i class='fas fa-edit'></i></btn>
+											<btn data-toggle='tooltip' data-placement='top' title='Change password' class='btn-changepass btn btn-warning btn-xs' style='margin-right: 5px' data-username='$user->username'> <i class='fas fa-lock'></i></btn>
+											<btn data-toggle='tooltip' data-placement='top' title='Delete user' class='btn-delete btn btn-danger btn-xs' style='margin-right: 5px' data-username='$user->username' data-img='$user->profile_photo'> <i class='fas fa-trash'></i></btn>
 											</td>";
 										echo "</tr>";
 									}
@@ -172,7 +172,7 @@ require_once('views/admin/content_layouts.php'); ?>
 										</div>
 										<form action="index.php?page=admin&controller=user&action=editInfo" enctype="multipart/form-data" method="post">
 											<div class="modal-body">
-												<input type="hidden" name="email">
+												<input type="hidden" name="username">
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
@@ -251,8 +251,8 @@ require_once('views/admin/content_layouts.php'); ?>
 											<div class="modal-body">
 												<input type="hidden" name="id" />
 												<div class="form-group">
-													<label>Email</label>
-													<input class="form-control" type="text" placeholder="Email" name="email" readonly />
+													<label>Username</label>
+													<input class="form-control" type="text" placeholder="Username" name="username" readonly />
 												</div>
 
 												<div class="form-group">
@@ -278,7 +278,7 @@ require_once('views/admin/content_layouts.php'); ?>
 										</div>
 										<form action="index.php?page=admin&controller=user&action=delete" method="post">
 											<div class="modal-body">
-												<input type="hidden" name="email" />
+												<input type="hidden" name="username" />
 												<input type="hidden" name="img" />
 												<p>Are you sure?</p>
 											</div>

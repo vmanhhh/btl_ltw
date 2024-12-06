@@ -10,7 +10,7 @@ class LoginController extends BaseController
     }
 
     public function index()
-    {
+    { 
         session_start();
 
         // Maximum number of allowed login attempts
@@ -48,7 +48,7 @@ class LoginController extends BaseController
             session_destroy();
             header("Location: index.php?page=main&controller=login&action=index");
         } else if (isset($_POST['submit-btn'])) {
-            $requiredFields = ['email', 'password'];
+            $requiredFields = ['username', 'password'];
 
             foreach ($requiredFields as $field) {
                 if (empty($_POST[$field])) {
@@ -61,15 +61,15 @@ class LoginController extends BaseController
                 }
             }
 
-            $email = $_POST['email'];
+            $username = $_POST['username'];
             $password = $_POST['password'];
             unset($_POST);
-            $check = User::validation($email, $password);
+            $check = User::validation($username, $password);
 
             if ($check == 1) {
                 // Reset failed attempts on successful login
                 $_SESSION['failed_attempts'] = 0;
-                $_SESSION["guest"] = $email;
+                $_SESSION["guest"] = $username;
                 header('Location: index.php?page=main&controller=layouts&action=index');
             } else {
                 // Increment failed attempts on unsuccessful login

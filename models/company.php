@@ -16,7 +16,7 @@ class Company
         $this->createAt = $createAt;
         $this->updateAt = $updateAt;
     }
-
+ 
     static function getAll()
     {
         $db = DB::getInstance();

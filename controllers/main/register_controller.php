@@ -12,11 +12,11 @@ class RegisterController extends BaseController
 	public function index()
 	{
 		$this->render('index');
-	}
+	} 
 
 	public function submit()
 {
-	$requiredFields = ['fname', 'lname', 'birthday', 'gender', 'phone', 'email', 'pass'];
+	$requiredFields = ['fname', 'lname', 'birthday', 'gender', 'phone', 'username', 'pass'];
 
 	foreach ($requiredFields as $field) {
 		if (empty($_POST[$field])) {
@@ -34,17 +34,17 @@ class RegisterController extends BaseController
 	$birthday = $_POST['birthday'];
 	$gender = isset($_POST['gender']) ? $_POST['gender'] : null;
 	$phone = $_POST['phone'];
-	$email = $_POST['email'];
+	$username = $_POST['username'];
 	$password = $_POST['pass'];
 
-	if (User::validateRegister($email)) {
-		User::insert($email, 'public/img/user/default.png', $fname, $lname, $gender, $birthday, $phone, $password);
+	if (User::validateRegister($username)) {
+		User::insert($username, 'public/img/user/default.png', $fname, $lname, $gender, $birthday, $phone, $password);
 
 		header('Location: index.php?page=main&controller=login&action=index');
 		exit();
 	}
 	
-	$error = "Email đã tồn tại";
+	$error = "Username đã tồn tại";
 	$data = array('error' => $error);
 	ob_start(); // Start output buffering
 	$this->render('index', $data);
@@ -57,7 +57,7 @@ class RegisterController extends BaseController
 	public function editInfo()
 	{
 		session_start();
-		$email = $_SESSION['guest'];
+		$username = $_SESSION['guest'];
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
 		$gender = $_POST['gender'];
@@ -92,26 +92,26 @@ class RegisterController extends BaseController
 		unlink($file_pointer);
 		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 		// Update
-		$change_info = User::update($email, $target_file, $fname, $lname, $gender, $birthday, $phone);
+		$change_info = User::update($username, $target_file, $fname, $lname, $gender, $birthday, $phone);
 		header('Location: index.php?page=main&controller=layouts&action=index');
 	}
 
 	public function editPass()
 	{
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$newpassword = $_POST['new-password'];
-		echo $email . " " . $newpassword .  "\n";
-		$change_pass = User::changePassword_($email, $newpassword);
+		echo $username . " " . $newpassword .  "\n";
+		$change_pass = User::changePassword_($username, $newpassword);
 		echo "change_pass";
 		header('Location: index.php?page=admin&controller=user&action=index');
 	}
 
 	public function delete()
 	{
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$urlcurrent = $_POST['img'];
 		unlink($urlcurrent);
-		$delete_user = User::delete($email);
+		$delete_user = User::delete($username);
 		header('Location: index.php?page=admin&controller=user&action=index');
 	}
 }

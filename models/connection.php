@@ -16,6 +16,6 @@ class DB
             }
         }
 
-        return self::$instance;
+        return self::$instance; 
     }
 }

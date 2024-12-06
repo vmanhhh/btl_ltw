@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 05, 2024 at 05:21 PM
+-- Generation Time: Dec 06, 2024 at 04:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -149,19 +149,21 @@ CREATE TABLE `news` (
   `date` datetime DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
-  `content` varchar(10000) DEFAULT NULL
+  `content` varchar(10000) DEFAULT NULL,
+  `admin_id` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `status`, `date`, `title`, `description`, `content`) VALUES
-(1, 1, '2024-10-02 05:13:37', 'Japanese Ambassador Visits Fsoft To Promote Bilateral Cooperation', 'On November 20, the Ambassador Extraordinary and Plenipotentiary of Japan to Vietnam, Mr. Ito Naoki, visited campus #Codecation Hola Park. The visit provided an opportunity to strengthen the friendship between the two sides and build a solid foundation for advancing digital transformation in Japan.', 'The Chairwoman of #FPTSoftware, Ms. Chu Thi Thanh Ha, shared FPT Software’s remarkable achievements in the Japanese market, particularly its strategic projects that have significantly contributed to the digital transformation of major partners. Besides, Mr. Ito Naoki affirmed his commitment to supporting FPT Software engineers in working more conveniently in Japan.'),
-(2, 1, '2024-10-25 05:14:23', 'In response to the Happy Giga Run, FPT Korea spreads a love for exercise in the heart of Seoul', 'Following the success of Happy Giga Run in September, the Autumn Giga Run relay race took place at Yeouido Hangang Park in Seoul, South Korea. The event featured 28 athletes who are employees of FPT Korea, cheered on enthusiastically by their family, friends, and colleagues.', 'Mr. Kim Minwoo, an FPT Korea employee who participated in the race, shared: \"I\'m very happy and excited to be part of this fun event. Since it\'s held every quarter, I\'ll keep participating and hope to win next time.\"'),
-(3, 1, '2022-11-02 16:20:00', '[FPT Software\'s 25 Years] Campus for Settlement', 'CEO of #FPTSoftware, Mr. Pham Minh Tuan emphasizes that to become an World-class enterprise, attracting and promoting resource development is vital. Therefore, he hopes to transform the campus complex into an icon of the Vietnamese IT industry, reaching a leading position in the Asia-Pacific region, becoming a “magnet” for global IT engineers.', 'Towards the goal of contributing 50% to #FPT Corporation\'s target of 1 million employees - 1 million digital transformation warriors by 2035, FSOFT will continue to expand its market, open branches, and establish campus/office complexes in major cities in Vietnam such as Hue, Quy Nhon, Nha Trang, as well as in international markets, including Mexico, Saudi Arabia, Romania, Colombia.'),
-(4, 1, '2022-11-03 16:20:00', 'Campus for Settlement', 'CEO of #FPTSoftware, Mr. Pham Minh Tuan emphasizes that to become an World-class enterprise, attracting and promoting resource development is vital. Therefore, he hopes to transform the campus complex into an icon of the Vietnamese IT industry, reaching a leading position in the Asia-Pacific region, becoming a “magnet” for global IT engineers.', 'Towards the goal of contributing 50% to #FPT Corporation\'s target of 1 million employees - 1 million digital transformation warriors by 2035, FSOFT will continue to expand its market, open branches, and establish campus/office complexes in major cities in Vietnam such as Hue, Quy Nhon, Nha Trang, as well as in international markets, including Mexico, Saudi Arabia, Romania, Colombia.'),
-(5, 1, '2024-11-25 05:14:23', 'FPT Software and FPT Education partner to open educational representative office in Japan', 'FPT has announced the plan to establish an educational representative office in Japan. With the aim of globalizing  studying experience, the office will connect students from Vietnam, Japan and Northeast Asia, fostering opportunities to enhance training quality and cultivate a skilled workforce in the technology sector. The office is expected to be located at one of FPT\'s branches in Japan.', '\"This signing event marks a significant milestone in fulfilling the long-term commitment of FPT Software and #FPTEducation to train and provide high-quality IT professionals, particularly for Japan - a market renowned for its stringent standards for IT engineers. I believe that the collaboration between FPT\'s IT services and education units in Vietnam and Japan will not only foster new advancements in developing highly skilled professionals with IT expertise, fluency in Japanese, and a deep understanding of Japanese culture but also exemplify FPT\'s unity and synergy on the global stage\", shared Ms. Chu Thanh Ha, Chairwoman of FPT Software.');
+INSERT INTO `news` (`id`, `status`, `date`, `title`, `description`, `content`, `admin_id`) VALUES
+(1, 1, '2024-10-02 05:13:37', 'Japanese Ambassador Visits Fsoft To Promote Bilateral Cooperation', 'On November 20, the Ambassador Extraordinary and Plenipotentiary of Japan to Vietnam, Mr. Ito Naoki, visited campus #Codecation Hola Park. The visit provided an opportunity to strengthen the friendship between the two sides and build a solid foundation for advancing digital transformation in Japan.', 'The Chairwoman of #FPTSoftware, Ms. Chu Thi Thanh Ha, shared FPT Software’s remarkable achievements in the Japanese market, particularly its strategic projects that have significantly contributed to the digital transformation of major partners. Besides, Mr. Ito Naoki affirmed his commitment to supporting FPT Software engineers in working more conveniently in Japan.', 'admin'),
+(2, 1, '2024-10-25 05:14:23', 'In response to the Happy Giga Run, FPT Korea spreads a love for exercise in the heart of Seoul', 'Following the success of Happy Giga Run in September, the Autumn Giga Run relay race took place at Yeouido Hangang Park in Seoul, South Korea. The event featured 28 athletes who are employees of FPT Korea, cheered on enthusiastically by their family, friends, and colleagues.', 'Mr. Kim Minwoo, an FPT Korea employee who participated in the race, shared: \"I\'m very happy and excited to be part of this fun event. Since it\'s held every quarter, I\'ll keep participating and hope to win next time.\"', 'admin'),
+(3, 1, '2022-11-02 16:20:00', '[FPT Software\'s 25 Years] Campus for Settlement', 'CEO of #FPTSoftware, Mr. Pham Minh Tuan emphasizes that to become an World-class enterprise, attracting and promoting resource development is vital. Therefore, he hopes to transform the campus complex into an icon of the Vietnamese IT industry, reaching a leading position in the Asia-Pacific region, becoming a “magnet” for global IT engineers.', 'Towards the goal of contributing 50% to #FPT Corporation\'s target of 1 million employees - 1 million digital transformation warriors by 2035, FSOFT will continue to expand its market, open branches, and establish campus/office complexes in major cities in Vietnam such as Hue, Quy Nhon, Nha Trang, as well as in international markets, including Mexico, Saudi Arabia, Romania, Colombia.', 'admin'),
+(4, 1, '2022-11-03 16:20:00', 'Campus for Settlement', 'CEO of #FPTSoftware, Mr. Pham Minh Tuan emphasizes that to become an World-class enterprise, attracting and promoting resource development is vital. Therefore, he hopes to transform the campus complex into an icon of the Vietnamese IT industry, reaching a leading position in the Asia-Pacific region, becoming a “magnet” for global IT engineers.', 'Towards the goal of contributing 50% to #FPT Corporation\'s target of 1 million employees - 1 million digital transformation warriors by 2035, FSOFT will continue to expand its market, open branches, and establish campus/office complexes in major cities in Vietnam such as Hue, Quy Nhon, Nha Trang, as well as in international markets, including Mexico, Saudi Arabia, Romania, Colombia.', 'admin'),
+(5, 1, '2024-11-25 05:14:23', 'FPT Software and FPT Education partner to open educational representative office in Japan', 'FPT has announced the plan to establish an educational representative office in Japan. With the aim of globalizing  studying experience, the office will connect students from Vietnam, Japan and Northeast Asia, fostering opportunities to enhance training quality and cultivate a skilled workforce in the technology sector. The office is expected to be located at one of FPT\'s branches in Japan.', '\"This signing event marks a significant milestone in fulfilling the long-term commitment of FPT Software and #FPTEducation to train and provide high-quality IT professionals, particularly for Japan - a market renowned for its stringent standards for IT engineers. I believe that the collaboration between FPT\'s IT services and education units in Vietnam and Japan will not only foster new advancements in developing highly skilled professionals with IT expertise, fluency in Japanese, and a deep understanding of Japanese culture but also exemplify FPT\'s unity and synergy on the global stage\", shared Ms. Chu Thanh Ha, Chairwoman of FPT Software.', 'admin'),
+(10, 1, '2024-12-06 03:50:50', 'FPT News week 49/2024', 'Hello', 'FPT Corporation (FPT) is a globally leading technology and IT services provider headquartered in Vietnam. FPT operates in three core sectors: Technology, Telecommunications, and Education. During over three decades of development, FPT has constantly provided practical and effective products to millions of people and tens of thousands of business and non-business organizations worldwide, establishing Vietnam’s position on the global tech map. Keeping up with the latest market trends and emerging technologies, FPT has developed the Made-by-FPT ecosystem of services, products, solutions, and platforms, which enables sustainable growth for organizations and businesses and offers distinctive experiences to customers. In 2023, FPT recorded a total revenue of USD 2.17 billion and 48,000+ employees. For more information, please visit https://fpt.com/en.', 'admin');
 
 -- --------------------------------------------------------
 
@@ -274,7 +276,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -286,7 +288,7 @@ ALTER TABLE `company`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `product`

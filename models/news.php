@@ -8,8 +8,9 @@ class News
     public $title;
     public $description;
     public $content;
+    public $admin_id;
 
-    public function __construct($id, $status, $date, $title, $description, $content)
+    public function __construct($id, $status, $date, $title, $description, $content,$admin_id)
     {
         $this->id = $id;
         $this->status = $status;
@@ -17,6 +18,7 @@ class News
         $this->title = $title;
         $this->description = $description;
         $this->content = $content;
+        $this->admin_id = $admin_id;
     }
 
     static function getAll()
@@ -32,7 +34,8 @@ class News
                 $news['date'],
                 $news['title'],
                 $news['description'],
-                $news['content']
+                $news['content'],
+                $news['admin_id']
             );
         }
         return $lnews;
@@ -51,7 +54,8 @@ class News
                 $news['date'],
                 $news['title'],
                 $news['description'],
-                $news['content']
+                $news['content'],
+                $news['admin_id']
             );
         }
         return $lnews;
@@ -68,20 +72,21 @@ class News
             $result['date'],
             $result['title'],
             $result['description'],
-            $result['content']
+            $result['content'],
+            $result['admin_id']
         );
         return $news;
     }
 
-    static function insert($title, $description, $content)
+    static function insert($title, $description, $content,$admin_id)
     {
         $status = true;
         $date = date("Y-m-d-h-i-s");
         $db = DB::getInstance();
         $req = $db->query(
             "
-            INSERT INTO news (status, date, title, description, content)
-            VALUES ($status, '$date', '$title', '$description', '$content')
+            INSERT INTO news (status, date, title, description, content, admin_id)
+            VALUES ($status, '$date', '$title', '$description', '$content','$admin_id')
             ;");
         return $req;
     }
@@ -133,7 +138,8 @@ class News
                 $news['date'],
                 $news['title'],
                 $news['description'],
-                $news['content']
+                $news['content'],
+                admin_id: $news['admin_id']
             );
         }
         return $lnews;

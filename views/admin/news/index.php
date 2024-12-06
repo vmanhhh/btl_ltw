@@ -81,7 +81,8 @@ require_once('views/admin/content_layouts.php');
                                         <th scope="col">Title</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Content</th>
-                                        <th style="width:150px;" scope="col">Status</th>
+                                        <th style="width:150px;" scope="col">Author</th>
+                                        <th style="width:75px;"scope="col">Status</th>
                                         <th style="width:150px;" scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -92,7 +93,7 @@ require_once('views/admin/content_layouts.php');
                                     $index = 1;
 
                                     foreach ($news as $new) {
-                                        $status = ($new->status) ? 'Show' : 'Hidden';
+                                        $status = ($new->status) ? 'Shown' : 'Hidden';
                                         $button = ($new->status) ? "<button class=\"btn-hide btn btn-secondary btn-xs\" style=\"margin-right: 5px\" data-id='$new->id' ><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-x-lg\" viewBox=\"0 0 16 16\">
                                                       <path fill-rule=\"evenodd\" d=\"M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z\"/>
                                                       <path fill-rule=\"evenodd\" d=\"M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z\"/>
@@ -118,6 +119,9 @@ require_once('views/admin/content_layouts.php');
                                                     <td>
                                                        " . $new->content . "
                                                     </td>   
+                                                    <td>
+                                                        " . $new->admin_id . "
+                                                    </td>
                                                     
                                                     <td class=\"text-center\">
                                                        " . $status . "

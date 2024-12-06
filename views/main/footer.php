@@ -12,7 +12,7 @@
 						F-Town Building, Lot T2, D1 Street, Saigon Hi-Tech Park, Tan Phu Ward, District 9,<br>
 						Ho Chi Minh City, Vietnam<br><br>
 						<strong>Phone:</strong> 8428 - 39623888<br>
-						<strong>Email:</strong> recruitment@fpt.com<br>
+						<strong>Username:</strong> recruitment@fpt.com<br>
 					</p>
 				</div>
 
@@ -22,7 +22,7 @@
 						FPT Complex Building, Nam Ky Khoi Nghia Rd., Hoa Hai Ward, Ngu Hanh Son Dist.,<br>
 						Danang, Vietnam<br><br>
 						<strong>Phone:</strong> 0355 101 709<br>
-						<strong>Email:</strong> recruitment@fpt.com<br>
+						<strong>Username:</strong> recruitment@fpt.com<br>
 					</p>
 				</div>
 
@@ -32,7 +32,7 @@
 						F-Ville Building, Technology Village No.3 & 4, Software Area, Hoa Lac Hi-Tech Park, Km29, Thanglong Freeway,<br>
 						Thach That District, Hanoi City, Vietnam<br><br>
 						<strong>Phone:</strong> 024 3786 8866<br>
-						<strong>Email:</strong> recruitment@fpt.com<br>
+						<strong>Username:</strong> recruitment@fpt.com<br>
 					</p>
 				</div>
 
@@ -62,7 +62,7 @@
 <script src="public/assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="public/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="public/assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="public/assets/vendor/php-email-form/validate.js"></script>
+<script src="public/assets/vendor/php-username-form/validate.js"></script>
 
 <!-- Template Main JS File -->
 <script src="public/assets/js/main.js"></script>

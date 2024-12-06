@@ -23,9 +23,9 @@ class UserController extends BaseController
 		$birthday = $_POST['birthday'];
 		$gender = $_POST['gender'];
 		$phone = $_POST['phone'];
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$password = $_POST['password'];
-		echo $fname . $lname . $birthday . $gender . $phone . $email . $password;
+		echo $fname . $lname . $birthday . $gender . $phone . $username . $password;
 		// Photo
 		$target_dir = "public/img/user/";
 		$path = $_FILES['fileToUpload']['name'];
@@ -53,13 +53,13 @@ class UserController extends BaseController
 		}
 		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 		// Add new
-		$add_new = User::insert($email, $target_file, $fname, $lname, $gender, $birthday, $phone, $password);
+		$add_new = User::insert($username, $target_file, $fname, $lname, $gender, $birthday, $phone, $password);
 		header('Location: index.php?page=admin&controller=user&action=index');
 	}
 
 	public function editInfo()
 	{
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
 		$gender = $_POST['gender'];
@@ -94,24 +94,24 @@ class UserController extends BaseController
 		unlink($file_pointer);
 		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 		// Update
-		$change_info = User::update($email, $target_file, $fname, $lname, $gender, $birthday, $phone);
+		$change_info = User::update($username, $target_file, $fname, $lname, $gender, $birthday, $phone);
 		header('Location: index.php?page=admin&controller=user&action=index');
 	}
 
 	public function editPass()
 	{
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$newpassword = $_POST['new-password'];
-		$change_pass = User::changePassword_($email, $newpassword);
+		$change_pass = User::changePassword_($username, $newpassword);
 		header('Location: index.php?page=admin&controller=user&action=index');
 	}
 
 	public function delete()
 	{
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$urlcurrent = $_POST['img'];
 		unlink($urlcurrent);
-		$delete_user = User::delete($email);
+		$delete_user = User::delete($username);
 		header('Location: index.php?page=admin&controller=user&action=index');
 	}
 }
