@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2024 at 07:49 AM
+-- Generation Time: Dec 06, 2024 at 09:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -90,28 +90,6 @@ INSERT INTO `company` (`id`, `name`, `address`, `createAt`, `updateAt`) VALUES
 (1, 'Chi nhánh TPHCM', 'F-Town Building, Lot T2, D1 Street, Saigon Hi-Tech Park, Tan Phu Ward, District 9,Ho Chi Minh City, Vietnam', NULL, NULL),
 (2, 'Chi nhánh Đà Nẵng', 'FPT Complex Building, Nam Ky Khoi Nghia Rd., Hoa Hai Ward, Ngu Hanh Son Dist., Danang, Vietnam', NULL, NULL),
 (3, 'Chi nhánh Hà Nội', 'F-Ville Building, Technology Village No.3 & 4, Software Area, Hoa Lac Hi-Tech Park, Km29, Thanglong Freeway, Thach That District, Hanoi City, Vietnam.', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `creates`
---
-
-CREATE TABLE `creates` (
-  `news_id` int(11) NOT NULL,
-  `admin_email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `creates`
---
-
-INSERT INTO `creates` (`news_id`, `admin_email`) VALUES
-(1, 'admin@gmail.com'),
-(3, 'admin@gmail.com'),
-(4, 'manh@gmail.com'),
-(5, 'manh@gmail.com'),
-(6, 'manh@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -219,12 +197,6 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `company`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `creates`
---
-ALTER TABLE `creates`
-  ADD PRIMARY KEY (`news_id`,`admin_email`);
 
 --
 -- Indexes for table `news`
